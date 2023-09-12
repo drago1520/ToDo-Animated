@@ -14,8 +14,12 @@ const tasksSchema = new mongoose.Schema({
 const Task_today = mongoose.model("Task_today", tasksSchema);
 const Task_week = mongoose.model("Task_week", tasksSchema);
 
+let port = process.env.PORT;
+
+if (port == null || port == "") {
+  port = 3000;
+}
 const app = express();
-const port = 3000;
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
