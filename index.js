@@ -54,12 +54,13 @@ let to_do_s = [];
 let to_do_s_week = [];
 
 //GET
+//When there are no tasks, the programs fills 3 tasks into db.
 app.get("/", async(req, res) => {
   let find_results = await Task_today.find({});
 if (find_results.length === 0){
   let insert_results = await Task_today.insertMany(defaultItems);
 }else{
-  console.log("No inserted docs. Already full.");
+  console.log("No inserted docs. Database already has data.");
 }
 find_results = await Task_today.find({});
   res.render("index.ejs", {find_results});
