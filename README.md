@@ -6,3 +6,6 @@ How to run:
 2. nodemon index.js
 3. localhost:3000
 *your tasks are saved on a Database.
+
+OR
+https://dry-headland-99006-aaeda402c285.herokuapp.com/
